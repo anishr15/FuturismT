@@ -16,8 +16,8 @@
 	<header class="_demo--heading">
 		<div class="_demo--container">
 			<a class="wordmark" href="index.jsp">
-				<span class="wordmark--left">Talk to</span>
-				<span class="wordmark--right">Watson</span>
+				<span class="wordmark--left">Futurism</span>
+				<span class="wordmark--right">Chatbot</span>
 			</a>
 			
 			<!--nav class="heading-nav">

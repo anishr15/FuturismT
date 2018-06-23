@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Talk to Watson</title>
+<title>Futurism Chatbot</title>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,37 +69,7 @@
 				</div>
 			</div>
 
-			<div class="_content--data">
-				<div class="tab-panels" role="tabpanel">
-					<ul class="tab-panels--tab-list" role="tablist">
-						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Controller</a>
-						</li>
-						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
-						</li>
-					</ul>
-					<div class="tab-panels--tab-content">
-						<div id="json-panel" class="tab-panels--tab-pane" role="tab-panel">
-							<textarea class="base--textarea"></textarea>
-						</div>
-						<div id="control-panel" class="tab-panels--tab-pane active" role="tab-panel">
-							<div class="car-controller">
-								<div class="row">
-									<a class="item item-up" ref="w"><i class="ion-arrow-up-b"></i></a>
-								</div>
-								<div class="row">
-									<a class="item item-left" ref="a"><i class="ion-arrow-left-b"></i></a>
-									<a class="item item-right" ref="d"><i class="ion-arrow-right-b"></i></a>
-								</div>
-								<div class="row">
-									<a class="item item-down" ref="s"><i class="ion-arrow-down-b"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 
 			<div class="ui-transcription"></div>
 		</article>

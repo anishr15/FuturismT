@@ -272,9 +272,13 @@ var conversation_result, is_wating = false, methods = {
 					$('.ui-transcription').html('<div class="text">'+transcript+'</div>');
 	
 					if(data.hasOwnProperty('final') && data['final']){
-						isSpeaking = false;
+						/*isSpeaking = false;
 						changeUIState(isSpeaking);
-						stream.stop();
+						stream.stop();*/
+						stream = recognize(sttToken);
+				        isSpeaking = true;
+				        changeUIState(isSpeaking);
+				        
 						converse(transcript);
 						$('.ui-transcription').text('');
 					}

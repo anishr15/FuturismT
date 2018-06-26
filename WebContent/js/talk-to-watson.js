@@ -216,7 +216,16 @@ var conversation_result, is_wating = false, methods = {
 				$loading.show();
 				$mic.addClass('active');
 				$mic.val('Speaking...');
-			} else {
+			} 
+			
+			if(isSpeaking=="notfirsttime")
+			{
+			    $loading.show();
+				$mic.addClass('active');
+				$mic.val('ContinueSpeaking');
+			}
+			
+			else {
 				/*$loading.hide();
 				$mic.removeClass('active');
 				$mic.val('Speak');*/
@@ -276,7 +285,7 @@ var conversation_result, is_wating = false, methods = {
 						changeUIState(isSpeaking);
 						stream.stop();*/
 						stream = recognize(sttToken);
-				        isSpeaking = true;
+				        isSpeaking = "notfirsttime";
 				        changeUIState(isSpeaking);
 				        
 						converse(transcript);

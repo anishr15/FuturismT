@@ -287,7 +287,7 @@ var conversation_result, is_wating = false, methods = {
 						stream = recognize(sttToken);
 				        isSpeaking = "notfirsttime";
 				        changeUIState(isSpeaking);
-				        stream.stop();
+				        
 				        
 						converse(transcript);
 						$('.ui-transcription').text('');

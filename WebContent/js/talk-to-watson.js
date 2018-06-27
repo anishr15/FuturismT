@@ -217,12 +217,9 @@ var conversation_result, is_wating = false, methods = {
 				$mic.addClass('active');
 				$mic.val('Speaking...');
 			} else {
-				/*$loading.hide();
+				$loading.hide();
 				$mic.removeClass('active');
-				$mic.val('Speak');*/
-				$loading.show();
-				$mic.addClass('active');
-				$mic.val('Speaking...');
+				$mic.val('Speak');
 			}
 		};
 

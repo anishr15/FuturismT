@@ -218,20 +218,20 @@ var conversation_result, is_wating = false, methods = {
 				$mic.val('Speaking...');
 			} 
 			
-			if(isSpeaking=="notfirsttime")
+			/*if(isSpeaking=="notfirsttime")
 			{
 			    $loading.show();
 				$mic.addClass('active');
 				$mic.val('ContinueSpeaking');
-			}
+			}*/
 			
 			else {
-				/*$loading.hide();
+				$loading.hide();
 				$mic.removeClass('active');
-				$mic.val('Speak');*/
-				$loading.show();
+				$mic.val('Speak');
+				/*$loading.show();
 				$mic.addClass('active');
-				$mic.val('Speaking...');
+				$mic.val('Speaking...');*/
 			}
 		};
 
@@ -281,12 +281,12 @@ var conversation_result, is_wating = false, methods = {
 					$('.ui-transcription').html('<div class="text">'+transcript+'</div>');
 	
 					if(data.hasOwnProperty('final') && data['final']){
-						/*isSpeaking = false;
+						isSpeaking = false;
 						changeUIState(isSpeaking);
-						stream.stop();*/
-						stream = recognize(sttToken);
+						stream.stop();
+						/*stream = recognize(sttToken);
 				        isSpeaking = "notfirsttime";
-				        changeUIState(isSpeaking);
+				        changeUIState(isSpeaking);*/
 				        
 				        
 						converse(transcript);

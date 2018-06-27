@@ -216,22 +216,10 @@ var conversation_result, is_wating = false, methods = {
 				$loading.show();
 				$mic.addClass('active');
 				$mic.val('Speaking...');
-			} 
-			
-			/*if(isSpeaking=="notfirsttime")
-			{
-			    $loading.show();
-				$mic.addClass('active');
-				$mic.val('ContinueSpeaking');
-			}*/
-			
-			else {
+			} else {
 				$loading.hide();
 				$mic.removeClass('active');
 				$mic.val('Speak');
-				/*$loading.show();
-				$mic.addClass('active');
-				$mic.val('Speaking...');*/
 			}
 		};
 
@@ -284,11 +272,6 @@ var conversation_result, is_wating = false, methods = {
 						isSpeaking = false;
 						changeUIState(isSpeaking);
 						stream.stop();
-						/*stream = recognize(sttToken);
-				        isSpeaking = "notfirsttime";
-				        changeUIState(isSpeaking);*/
-				        
-				        
 						converse(transcript);
 						$('.ui-transcription').text('');
 					}

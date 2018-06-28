@@ -41,8 +41,8 @@ public class Talk extends HttpServlet {
 			contextObject = JSONObject.parseObject(contextString);
 		}
 
-		System.out.println("Context: ");
-		System.out.println(contextString.part_number);
+		System.out.println("Context: " + contextString);
+		
 		System.out.println(contextObject);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
@@ -59,9 +59,10 @@ public class Talk extends HttpServlet {
 		service.setUsernameAndPassword(Configuration.getInstance().CONVERSATION_USERNAME, Configuration.getInstance().CONVERSATION_PASSWORD);
 
 		MessageRequest newMessage = new MessageRequest.Builder().context(contextMap).inputText(requestMessage).build();
-
+        System.out.println(newMessage);
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
-
+    
 		response.getWriter().append(r.toString());
+		System.out.println(r);
 	}
 }

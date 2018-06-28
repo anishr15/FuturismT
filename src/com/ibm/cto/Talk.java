@@ -57,8 +57,8 @@ public class Talk extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("utf-8");
 		
-	//	int var1 = response.getContext().get("$part_number");
-	//	System.out.println(var1);
+	    String var1 = response.Context["part_number"];
+	    System.out.println(var1);
 
 		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2016_09_20);
 		service.setUsernameAndPassword(Configuration.getInstance().CONVERSATION_USERNAME, Configuration.getInstance().CONVERSATION_PASSWORD);
@@ -67,13 +67,13 @@ public class Talk extends HttpServlet {
         //System.out.println(newMessage);
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
     
-        if(r.getContext()!=null)
-        {
-            contextMap.clear();
-             contextMap = response.getContext();
-        }
+        //if(r.getContext()!=null)
+        //{
+            //contextMap.clear();
+            // contextMap = response.getContext();
+        //}
 		response.getWriter().append(r.toString());
-		System.out.println(contextMap['part_number']);
+		//System.out.println(contextMap['part_number']);
 	//	System.out.println(r);
 	}
 }

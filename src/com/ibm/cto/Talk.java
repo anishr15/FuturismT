@@ -46,7 +46,8 @@ public class Talk extends HttpServlet {
 		System.out.println(contextObject);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
-
+        System.out.println(contextMap);
+        
 		if(requestMessage == null || requestMessage.isEmpty()){
 			requestMessage = "Greetings";
 		}

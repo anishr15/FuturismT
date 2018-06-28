@@ -43,9 +43,10 @@ public class Talk extends HttpServlet {
 
 		//System.out.println("Context: " + contextString);
 		
-		System.out.println("JSON OBJECT ContextString:"+contextString);
+		//System.out.println("JSON OBJECT ContextString:"+contextString);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
+		 contextMap.forEach((k, v) -> System.out.println(k + " => " + v));
         //System.out.println(contextMap);
         
 		if(requestMessage == null || requestMessage.isEmpty()){

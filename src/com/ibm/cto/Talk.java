@@ -57,7 +57,7 @@ public class Talk extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("utf-8");
 		
-	    String var1 = response.Context["part_number"];
+	    String var1 = contextMap.get("part_number");
 	    System.out.println(var1);
 
 		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2016_09_20);

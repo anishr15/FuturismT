@@ -73,7 +73,7 @@ public class Talk extends HttpServlet {
              contextMap = response.getContext();
         }
 		response.getWriter().append(r.toString());
-		System.out.println('part_number');
+		System.out.println(contextMap['part_number']);
 	//	System.out.println(r);
 	}
 }

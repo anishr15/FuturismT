@@ -46,7 +46,8 @@ public class Talk extends HttpServlet {
 		//System.out.println("JSON OBJECT ContextString:"+contextString);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
-		 contextMap.forEach((k, v) -> System.out.println(k + " => " + v));
+		// contextMap.forEach((k, v) 
+		 //System.out.println(k + " => " + v);
         //System.out.println(contextMap);
         
 		if(requestMessage == null || requestMessage.isEmpty()){
@@ -66,7 +67,13 @@ public class Talk extends HttpServlet {
         //System.out.println(newMessage);
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
     
+        if(r.getContext() !=null)
+        {
+            contextMap.clear();
+             contextMap = response.getContext();
+        }
 		response.getWriter().append(r.toString());
+		System.out.println('part_number');
 	//	System.out.println(r);
 	}
 }

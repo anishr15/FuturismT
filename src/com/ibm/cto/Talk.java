@@ -43,7 +43,7 @@ public class Talk extends HttpServlet {
 
 		System.out.println("Context: ");
 		System.out.println(contextString);
-		System.out.println(contextObject);
+		System.out.println(contextObject.part_number);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
         System.out.println(contextMap);

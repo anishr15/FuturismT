@@ -41,39 +41,25 @@ public class Talk extends HttpServlet {
 			contextObject = JSONObject.parseObject(contextString);
 		}
 
-		//System.out.println("Context: " + contextString);
-		
-		//System.out.println("JSON OBJECT ContextString:"+contextString);
+		System.out.println("Context: ");
+		System.out.println(contextObject);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
-		// contextMap.forEach((k, v) 
-		 //System.out.println(k + " => " + v);
-        //System.out.println(contextMap);
-        
+
 		if(requestMessage == null || requestMessage.isEmpty()){
 			requestMessage = "Greetings";
 		}
 
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("utf-8");
-		
-	    String var1 = contextMap.get("part_number").toString();
-	    System.out.println(var1);
 
 		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2016_09_20);
 		service.setUsernameAndPassword(Configuration.getInstance().CONVERSATION_USERNAME, Configuration.getInstance().CONVERSATION_PASSWORD);
 
 		MessageRequest newMessage = new MessageRequest.Builder().context(contextMap).inputText(requestMessage).build();
-        //System.out.println(newMessage);
+
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
-    
-        //if(r.getContext()!=null)
-        //{
-            //contextMap.clear();
-            // contextMap = response.getContext();
-        //}
+
 		response.getWriter().append(r.toString());
-		//System.out.println(contextMap['part_number']);
-	//	System.out.println(r);
 	}
 }

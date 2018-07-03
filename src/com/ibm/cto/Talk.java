@@ -62,8 +62,8 @@ public class Talk extends HttpServlet {
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
-		context = r.getContext();
-		System.out.println(context);
+		String context1 = r.getContext();
+		System.out.println(context1);
 		
 	}
 }

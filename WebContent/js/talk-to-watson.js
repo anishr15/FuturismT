@@ -119,6 +119,27 @@ var conversation_result, is_wating = false, methods = {
 
 		        $chatInput.show();
 		        $chatInput[0].focus();
+		        
+		        // Adding a Dropdown for the options /////////////
+		        var generics = conversation_result.output ? conversation_result.output.generic : [];
+                var options = []
+                if ( generics.length != 0 ) {
+                  for ( var i=0; i<generics.length; i++ ) {                // loop till you find options
+                    if ( generics[i].response_type != "option" )
+                      continue
+                    else
+                      options = generics[i].options
+                  }
+                }
+                
+                if ( options.length != 0 ) {
+                  console.log("Options found are:")
+                  for ( var i=0; i<options.length; i++ ) {
+                    console.log("label: "+options[i].label+", value: "+options[i].value.input.text)
+                  }
+                }
+                
+                ///////////////////
 
 		        synthesize(response);
 

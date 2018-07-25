@@ -36,7 +36,7 @@ public class Talk extends HttpServlet {
 		String requestMessage = request.getParameter("message");
 		String contextString = request.getParameter("context");
 		JSONObject contextObject = new JSONObject();
-		
+		private Map<String,Object> context1 = new HashMap<>();
 
 		if(contextString != null) {
 			contextObject = JSONObject.parseObject(contextString);
@@ -63,8 +63,8 @@ public class Talk extends HttpServlet {
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
-		contextMap = r.getContext();
-		System.out.println(contextMap);
+		String context1 = r.getContext();
+		System.out.println(context1);
 		
 	}
 }

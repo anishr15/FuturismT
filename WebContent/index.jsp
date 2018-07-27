@@ -40,7 +40,7 @@
 									</div>
 									<div class="chat-box--message">
 										<div class="chat-box--message-vertical">
-											<p class="chat-box--message-text base--p"></p>
+											<p class="chat-box--message-text base--p" id="chatMessageBox1"></p>
 										</div>
 									</div>
 								</div>
@@ -49,7 +49,7 @@
 								<div class="chat-box--container">
 									<div class="chat-box--message">
 										<div class="chat-box--message-vertical">
-											<p class="chat-box--message-text base--p"></p>
+											<p class="chat-box--message-text base--p" id="chatMessageBox2"></p>
 										</div>
 									</div>
 									<div class="img-container chat-box--avatar chat-box--avatar_YOU">

@@ -131,13 +131,19 @@ var conversation_result, is_wating = false, methods = {
     		        }
 		        }
 
+                var all_options = $(".options");
+                var last_option = all_options[all_options.length-1];            // insert options in the last select box
 		        if ( options.length != 0 ) {
     		        console.log("Options found are:")
     		        for ( var i=0; i<options.length; i++ ) {
     		            console.log("label: "+options[i].label+", value: "+options[i].value.input.text)
+    		            in_value = options[i].value.input.text;
+    		            in_label = options[i].label;
+    		            last_option.innerHTML += "<option value='"+in_value+"'>"+in_label+"</option>";
     		        }
+    		        last_option.hidden = false;
 		        }
-                ///////////////////
+		        ///////////////////
 
 		        synthesize(response);
 

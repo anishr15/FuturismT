@@ -10,6 +10,20 @@
 <link rel="stylesheet" href="css/style.css" />
 <script>
 	var carServiceHost = '<%=com.ibm.cto.Configuration.getInstance().CAR_SERVICE_HOST %>';
+	
+	// enters data in input box once an option has been selected
+    function optionSelected(option) {
+    	document.getElementById("inputBox").value = option.value;
+    	simulateEnterOn('#inputBox')
+    }
+    
+    function simulateEnterOn(selector) {
+    	const event1 = new KeyboardEvent('keyup', {
+    		keyCode: 13,
+    		bubbles: true,
+    	  });
+    	document.querySelector(selector).dispatchEvent(event1);
+    }
 </script>
 </head>
 <body>

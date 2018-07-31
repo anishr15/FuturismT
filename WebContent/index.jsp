@@ -55,7 +55,7 @@
 									<div class="chat-box--message">
 										<div class="chat-box--message-vertical">
 											<p class="chat-box--message-text base--p" id="chatMessageBox1"></p>
-											<select class="options" name="options" onchange="optionSelected(this)" hidden="true"></select>
+											<!-- <select class="options" name="options" onchange="optionSelected(this)" hidden="true"></select> -->
 										</div>
 									</div>
 								</div>

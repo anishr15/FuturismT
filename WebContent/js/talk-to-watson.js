@@ -121,6 +121,7 @@ var conversation_result, is_wating = false, methods = {
 		        $chatInput[0].focus();
 		        
 		        // Adding a Dropdown for the options /////////////
+		        var generics = conversation_result.output ? conversation_result.output.generic : [];
 		        var options = []
 		        if ( generics.length != 0 ) {
     		        for ( var i=0; i<generics.length; i++ ) {		        		            // loop till you find options

@@ -134,6 +134,8 @@ var conversation_result, is_wating = false, methods = {
 
                 var all_options = $(".options");
                 var last_option = all_options[all_options.length-1];            // insert options in the last select box
+                var in_value = null;
+                var in_label = null;
 		        if ( options.length != 0 ) {
     		        console.log("Options found are:")
     		        for ( var i=0; i<options.length; i++ ) {

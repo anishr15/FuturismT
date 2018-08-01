@@ -15,6 +15,13 @@
     function optionSelected(option) {
     	document.getElementById("inputBox").value = option.value;
     	simulateEnterOn('#inputBox')
+    	
+    	// To prevent more than one option selection
+    	var attr = document.createAttribute("disabled")
+    	attr.value = "true"
+    	var selectOptions = document.getElementsByClassName("options");
+    	var lastOption = selectOptions[selectOptions.length-1]
+    	lastOption.setAttributeNode(attr);
     }
     
     function simulateEnterOn(selector) {

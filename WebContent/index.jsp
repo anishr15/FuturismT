@@ -62,9 +62,9 @@
 									<div class="chat-box--message">
 										<div class="chat-box--message-vertical">
 											<p class="chat-box--message-text base--p" id="chatMessageBox1"></p>
-											<!-- <select class="options" name="options" onchange="optionSelected(this)" hidden="true">
+											<select class="options" name="options" onchange="optionSelected(this)" hidden="true">
 											    <option value="" selected disabled hidden>Choose here</option>
-											</select> -->
+											</select>
 										</div>
 									</div>
 								</div>
@@ -74,9 +74,9 @@
 									<div class="chat-box--message">
 										<div class="chat-box--message-vertical">
 											<p class="chat-box--message-text base--p" id="chatMessageBox2"></p>
-											<select class="options" name="options" onchange="optionSelected(this)" hidden="true">
+											<!-- <select class="options" name="options" onchange="optionSelected(this)" hidden="true">
 											    <option value="" selected disabled hidden>Choose here</option>
-											</select>
+											</select> -->
 										</div>
 									</div>
 									<div class="img-container chat-box--avatar chat-box--avatar_YOU">

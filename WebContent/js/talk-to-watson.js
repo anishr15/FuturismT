@@ -120,34 +120,6 @@ var conversation_result, is_wating = false, methods = {
 		        $chatInput.show();
 		        $chatInput[0].focus();
 		        
-		        // Adding a Dropdown for the options /////////////
-		        var generics = conversation_result.output ? conversation_result.output.generic : [];
-		        var options = []
-		        if ( generics.length != 0 ) {
-    		        for ( var i=0; i<generics.length; i++ ) {		        		            // loop till you find options
-        		        if ( generics[i].response_type != "option" )
-        		            continue
-        		        else
-    		                options = generics[i].options
-    		        }
-		        }
-
-                var all_options = $(".options");
-                var last_option = all_options[all_options.length-1];            // insert options in the last select box
-                var in_value = null;
-                var in_label = null;
-		        if ( options.length != 0 ) {
-    		        console.log("Options found are:")
-    		        for ( var i=0; i<options.length; i++ ) {
-    		            console.log("label: "+options[i].label+", value: "+options[i].value.input.text)
-    		            in_value = options[i].value.input.text;
-    		            in_label = options[i].label;
-    		            last_option.innerHTML += "<option value='"+in_value+"'>"+in_label+"</option>";
-    		        }
-    		        last_option.hidden = false;
-		        }
-		        ///////////////////
-
 		        synthesize(response);
 
 		        talk('WATSON', response); // show
@@ -204,6 +176,34 @@ var conversation_result, is_wating = false, methods = {
 			setTimeout(function() {
 				$chatBox.removeClass('chat-box--item_HIDDEN');
 			}, 100);
+			
+			// Adding a Dropdown for the options /////////////
+			var generics = conversation_result.output ? conversation_result.output.generic : [];
+			var options = [];
+			if ( generics.length !== 0 ) {
+				for ( var i=0; i<generics.length; i++ ) {					   // loop till you find options
+					if ( generics[i].response_type != "option" )
+						continue;
+					else
+						options = generics[i].options;
+				}
+			}
+			
+			var all_options = $(".options");
+			var last_option = all_options[all_options.length-1];			// insert options in the last select box
+			var in_value = null;
+			var in_label = null;
+			if ( options.length !== 0 ) {
+				console.log("Options found are:");
+				for ( var i=0; i<options.length; i++ ) {
+					console.log("label: "+options[i].label+", value: "+options[i].value.input.text);
+					in_value = options[i].value.input.text;
+					in_label = options[i].label;
+					last_option.innerHTML += "<option value='"+in_value+"'>"+in_label+"</option>";
+				}
+			last_option.hidden = false;
+			}
+			///////////////////
 		};
 
 		/**

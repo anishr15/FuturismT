@@ -24,7 +24,8 @@ var conversation_result, is_wating = false, methods = {
 		$loading = $('.loader'), 
 		$mic = $('.ui-button-microphone');
 		
-		var g_options = [];                            // for drop-down of options - global /////////////
+		var g_options = [];				// for drop-down of options - global /////////////
+		var g_audio;		 			// to pause the last audio, when a new one is about to be played //////////////////////
 
 		$chatInput.keyup(function(event){
 			if(event.keyCode === 13) {
@@ -73,9 +74,12 @@ var conversation_result, is_wating = false, methods = {
 		 * Synthesize
 		 */
 		var synthesize = function(val) {
-			var audio = new Audio();
-			audio.src = 'Synthesize?text=' + val;
-			audio.play();
+			if (g_audio !== undefined) {
+                g_audio.pause();        // stop()
+			}
+			g_audio = new Audio();
+			g_audio.src = 'Synthesize?text=' + val;
+			g_audio.play();
 		};
 
 		/**

@@ -23,6 +23,8 @@ var conversation_result, is_wating = false, methods = {
 		$jsonPanel = $('#json-panel .base--textarea'),
 		$loading = $('.loader'), 
 		$mic = $('.ui-button-microphone');
+		
+		var g_options = [];                            // for drop-down of options /////////////
 
 		$chatInput.keyup(function(event){
 			if(event.keyCode === 13) {
@@ -116,6 +118,18 @@ var conversation_result, is_wating = false, methods = {
 		        	return;
 		        }
 		        var response = texts.join('<br />'); // &lt;br/&gt; is <br/>
+		        
+		        // Capturing data from API /////////////////////////////////////
+		        var generics = conversation_result.output ? conversation_result.output.generic : [];
+		        if ( generics.length !== 0 ) {
+		            for ( var i=0; i<generics.length; i++ ) {					   // loop till you find options
+		            if ( generics[i].response_type != "option" )
+		                continue;
+		            else
+		                g_options = generics[i].options;
+		            }
+		        }
+		        //////////////////////////////////////////////////
 
 		        $chatInput.show();
 		        $chatInput[0].focus();
@@ -178,27 +192,16 @@ var conversation_result, is_wating = false, methods = {
 			}, 100);
 			
 			// Adding a Dropdown for the options /////////////
-			var generics = conversation_result.output ? conversation_result.output.generic : [];
-			var options = [];
-			if ( generics.length !== 0 ) {
-				for ( var i=0; i<generics.length; i++ ) {					   // loop till you find options
-					if ( generics[i].response_type != "option" )
-						continue;
-					else
-						options = generics[i].options;
-				}
-			}
-			
 			var all_options = $(".options");
 			var last_option = all_options[all_options.length-1];			// insert options in the last select box
 			var in_value = null;
 			var in_label = null;
-			if ( options.length !== 0 ) {
+			if ( g_options.length !== 0 ) {
 				console.log("Options found are:");
-				for ( var i=0; i<options.length; i++ ) {
-					console.log("label: "+options[i].label+", value: "+options[i].value.input.text);
-					in_value = options[i].value.input.text;
-					in_label = options[i].label;
+				for ( var i=0; i<g_options.length; i++ ) {
+					in_value = g_options[i].value.input.text;
+					in_label = g_options[i].label;
+					console.log("label: "+in_label+", value: "+in_value);
 					last_option.innerHTML += "<option value='"+in_value+"'>"+in_label+"</option>";
 				}
 			last_option.hidden = false;

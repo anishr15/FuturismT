@@ -11,17 +11,25 @@
 <script>
 	var carServiceHost = '<%=com.ibm.cto.Configuration.getInstance().CAR_SERVICE_HOST %>';
 	
-	// enters data in input box once an option has been selected
+	// enters data in input box once an option has been selected //////////////////
     function optionSelected(option) {
     	document.getElementById("inputBox").value = option.value;
-    	simulateEnterOn('#inputBox')
+    	simulateEnterOn('#inputBox');
     	
     	// To prevent more than one option selection
-    	var attr = document.createAttribute("disabled")
-    	attr.value = "true"
+    	// var attr = document.createAttribute("disabled")
+    	// attr.value = "true"
     	var selectOptions = document.getElementsByClassName("options");
     	var lastOption = selectOptions[selectOptions.length-1]
-    	lastOption.setAttributeNode(attr);
+    	var prevStyle = lastOption.getAttribute("style");
+    	var newStyle;
+    	if (prevStyle == null || prevStyle == "")
+    	    newStyle = "display:none";
+        else
+            newStyle = prevStyle + ", display:none";
+    	
+    	lastOption.setAttribute("disabled", "true");
+    	lastOption.setAttribute("style", newStyle);
     }
     
     function simulateEnterOn(selector) {
@@ -31,6 +39,7 @@
     	  });
     	document.querySelector(selector).dispatchEvent(event1);
     }
+    ///////////////////////////////
 </script>
 </head>
 <body>

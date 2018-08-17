@@ -24,7 +24,7 @@ var conversation_result, is_wating = false, methods = {
 		$loading = $('.loader'), 
 		$mic = $('.ui-button-microphone');
 		
-		var g_options = [];                            // for drop-down of options /////////////
+		var g_options = [];                            // for drop-down of options - global /////////////
 
 		$chatInput.keyup(function(event){
 			if(event.keyCode === 13) {
@@ -119,8 +119,9 @@ var conversation_result, is_wating = false, methods = {
 		        }
 		        var response = texts.join('<br />'); // &lt;br/&gt; is <br/>
 		        
-		        // Capturing data from API /////////////////////////////////////
+		        // Capturing options from API response /////////////////////////////////////
 		        var generics = conversation_result.output ? conversation_result.output.generic : [];
+		        g_options = [];                  // clearing global variable
 		        if ( generics.length !== 0 ) {
 		            for ( var i=0; i<generics.length; i++ ) {					   // loop till you find options
 		            if ( generics[i].response_type != "option" )
@@ -191,7 +192,7 @@ var conversation_result, is_wating = false, methods = {
 				$chatBox.removeClass('chat-box--item_HIDDEN');
 			}, 100);
 			
-			// Adding a Dropdown for the options /////////////
+			// Filling the dropdown with the captured options /////////////
 			var all_options = $(".options");
 			var last_option = all_options[all_options.length-1];			// insert options in the last select box
 			var in_value = null;

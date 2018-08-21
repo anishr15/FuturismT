@@ -265,7 +265,8 @@ var conversation_result, is_wating = false, methods = {
 		var recognize = function(token) {
 			return WatsonSpeech.SpeechToText.recognizeMicrophone({
 				token : token,
-				objectMode : true
+				objectMode : true,
+				smart_formatting:true
 			});
 		};
 

@@ -59,7 +59,7 @@
 	</header>
 	<div class="_demo--container">
 		<article class="_demo--content base--article page" ref="chatbot">
-			<div class="_content--dialog">
+			<center><div class="_content--dialog">
 				<div class="chat-window">
 					<div class="chat-box">
 						<div class="chat-box--pane">
@@ -103,7 +103,7 @@
 					<input id="inputBox" type="text" placeholder="Type a response and hit enter" value="" autocomplete="off" class="chat-window--message-input base--text-input ui-input-message" />
 					<input type="button" value="Speak" class="base--button ui-button-microphone" />
 				</div>
-			</div>
+			</div></center>
 
 			
 

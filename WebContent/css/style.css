@@ -1188,7 +1188,6 @@ pre[class*=" language-"] {
     ._content--dialog {
       width: 50%;
       clear: right;
-      float: left;
       padding-right: 2rem; } }
 
 ._content--data {

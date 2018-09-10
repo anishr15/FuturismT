@@ -89,7 +89,7 @@
 										</div>
 									</div>
 									<div class="img-container chat-box--avatar chat-box--avatar_YOU">
-										<img src="images/icons/avatar-me.svg" class="chat-box--avatar-img" />
+										<img src="images/icons/future.jpg" class="chat-box--avatar-img" />
 									</div>
 								</div>
 							</div>

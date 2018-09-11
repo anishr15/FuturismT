@@ -3,8 +3,7 @@ applications:
 - name: webchatbot
   path: target/Chatbot-0.0.1.war
   buildpack: liberty-for-java
-  timeout: 80
-  no-route: true
+  
   env:
     CONVERSATION_WORKSPACE_ID: b388f51d-ebeb-484e-a246-5662922a77df
     CAR_SERVICE_HOST: webchatbotcar.mybluemix.net

@@ -1123,6 +1123,7 @@ pre[class*=" language-"] {
     .chat-box--item_WATSON .chat-box--message {
       background-color: #ececec; }
     .chat-box--item_YOU .chat-box--message {
+      word-break: break-all;
       background-color: #f4f4f4;
       text-align: right; }
   .chat-box--message-vertical {

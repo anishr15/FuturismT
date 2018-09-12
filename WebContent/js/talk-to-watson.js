@@ -28,6 +28,7 @@ var conversation_result, is_wating = false, methods = {
 		var g_audio;		 			// to pause the last audio, when a new one is about to be played //////////////////////
 
 		$chatInput.keyup(function(event){
+		    g_audio.pause()             /////////////////////// after any key is pressed in the text box
 			if(event.keyCode === 13) {
 				var inputText = $(this).val();
 				converse(inputText);
@@ -75,7 +76,7 @@ var conversation_result, is_wating = false, methods = {
 		 */
 		var synthesize = function(val) {
 			if (g_audio !== undefined) {
-                g_audio.pause();        // stop()
+                g_audio.pause();        // stop()   /////////// after text has been submitted
 			}
 			g_audio = new Audio();
 			g_audio.src = 'Synthesize?text=' + val;
@@ -285,6 +286,7 @@ var conversation_result, is_wating = false, methods = {
 		var isSpeaking = false, stream = null, ttsToken = '', sttToken = '';
 
 		$mic.on('click', function(evt){
+		    g_audio.pause();                /////////////// After the speech button is clicked
 			if(isSpeaking && stream){
 				stream.stop();
 				isSpeaking = false;

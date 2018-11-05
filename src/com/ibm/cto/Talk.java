@@ -50,7 +50,9 @@ public class Talk extends HttpServlet {
 		if(requestMessage == null || requestMessage.isEmpty()){
 			requestMessage = "Greetings";
 		}
-
+        if(response.getOutput().get("action")==="DBinsert"){
+            System.out.println("inserted data");
+        }
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("utf-8");
 		

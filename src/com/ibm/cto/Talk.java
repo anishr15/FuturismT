@@ -65,7 +65,7 @@ public class Talk extends HttpServlet {
 		response.getWriter().append(r.toString());
 		contextMap = r.getContext();
 		System.out.println(contextMap);
-		if(r.getOutput().get("action")==="DBinsert"){
+		if(response.get("action")==="DBinsert"){
 		    System.out.println("inserted data");
 		 }
 		

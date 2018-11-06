@@ -36,7 +36,7 @@ public class Talk extends HttpServlet {
 		String requestMessage = request.getParameter("message");
 		String contextString = request.getParameter("context");
 		JSONObject contextObject = new JSONObject();
-		
+		MessageResponse response = service.message(options).execute();
 
 		if(contextString != null) {
 			contextObject = JSONObject.parseObject(contextString);

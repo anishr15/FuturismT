@@ -64,8 +64,8 @@ public class Talk extends HttpServlet {
 
 		response.getWriter().append(r.toString());
 		/*contextMap = r.getContext();*/
-		 name = r.getContext().get("$name");
-		System.out.println("name is:" +name);
+		
+		System.out.println(r.getContext().get("$name"));
 		if (r.getOutput().get("actions") ){
 		    System.out.println("inserted data");
 		}

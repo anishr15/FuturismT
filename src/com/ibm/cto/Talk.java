@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.*;
 import com.ibm.watson.developer_cloud.conversation.v1.ConversationService;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageRequest;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
@@ -64,7 +64,7 @@ public class Talk extends HttpServlet {
 
 		response.getWriter().append(r.toString());
 		contextMap = r.getContext();
-		name = contextMap.get("$name");
+		String name = contextMap.get("$name");
 		System.out.println("name is:" +name);
 		if (r.getOutput().get("actions") ){
 		    System.out.println("inserted data");

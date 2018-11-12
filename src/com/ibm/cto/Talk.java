@@ -63,8 +63,8 @@ public class Talk extends HttpServlet {
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
-		contextMap = r.getContext();
-		String name = contextMap.get("$name");
+		/*contextMap = r.getContext();*/
+		String name = r.getContext().get("$name");
 		System.out.println("name is:" +name);
 		if (r.getOutput().get("actions") ){
 		    System.out.println("inserted data");

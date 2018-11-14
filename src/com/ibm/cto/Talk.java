@@ -42,7 +42,7 @@ public class Talk extends HttpServlet {
 			contextObject = JSONObject.parseObject(contextString);
 		}
 
-		System.out.println("Context: ");
+		System.out.println("Context: "+contextString);
 		System.out.println(contextObject);
 
 		Map<String, Object> contextMap = Utility.toMap(contextObject);
@@ -66,7 +66,7 @@ public class Talk extends HttpServlet {
 		/*contextMap = r.getContext();
 		System.out.println(r.getContext().get("$name"));*/
 		Object json = r.getOutput().get("actions");
-		System.out.println(String.valueOf(json));
+		System.out.println("action test" +String.valueOf(json));
 		if (r.getOutput().get("actions")=="DBinsert"){
 		    System.out.println("inserted data");
 		}

@@ -63,13 +63,11 @@ public class Talk extends HttpServlet {
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
-		/*contextMap = r.getContext();
-		System.out.println(r.getContext().get("$name"));*/
-		Object json = r.getOutput().get("actions");
-		System.out.println("action test" +String.valueOf(json));
-		if (r.getOutput().get("actions")=="DBinsert"){
+		/*contextMap = r.getContext();*/
+		System.out.println(r.getContext().get("$contact_details_entered"));
+	/*	if (r.getOutput().get("actions")=="DBinsert"){
 		    System.out.println("inserted data");
-		}
+		}*/
 	
 		
 	}

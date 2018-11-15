@@ -63,8 +63,10 @@ public class Talk extends HttpServlet {
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
+		boolean isExist = (boolean) r.getContext().containsKey("contact_details_entered");
+		System.out.println(" IsExist:--"+isExist);
 		/*contextMap = r.getContext();*/
-		System.out.println(r.getContext().get("$contact_details_entered"));
+		//System.out.println(r.getContext().get("contact_details_entered"));
 	/*	if (r.getOutput().get("actions")=="DBinsert"){
 		    System.out.println("inserted data");
 		}*/

@@ -67,11 +67,11 @@ public class Talk extends HttpServlet {
 		System.out.println(" IsExist:--"+isExist);
 		String name = (String) r.getContext().get("name");
 		String email = (String) r.getContext().get("email");
-		String phone =(String) r.getContext().get("phone");
+		Long phone =(Long) r.getContext().get("phone");
 		String company =(String) r.getContext().get("company_name");
 		String companytype =(String) r.getContext().get("company_type");
 		String partnumber =(String) r.getContext().get("part_number");
-		String qty = (String) r.getContext().get("part_qty");
+		Double qty = (Double) r.getContext().get("part_qty");
 		String timeframe =(String) r.getContext().get("timeframe");
 		
 		System.out.println(" name :--"+name);

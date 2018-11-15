@@ -65,6 +65,19 @@ public class Talk extends HttpServlet {
 		response.getWriter().append(r.toString());
 		boolean isExist = (boolean) r.getContext().containsKey("contact_details_entered");
 		System.out.println(" IsExist:--"+isExist);
+		String name = (String) r.getContext().get("name");
+		String email = (String) r.getContext().get("email");
+		String phone =(String) r.getContext().get("phone");
+		String company =(String) r.getContext().get("company_name");
+		String companytype =(String) r.getContext().get("company_type");
+		String partnumber =(String) r.getContext().get("part_number");
+		String qty = (String) r.getContext().get("part_qty");
+		String timeframe =(String) r.getContext().get("timeframe");
+		
+		System.out.println(" name :--"+name);
+		System.out.println(" email :--"+email);
+		System.out.println(" company :--"+company);
+	
 		/*contextMap = r.getContext();*/
 		//System.out.println(r.getContext().get("contact_details_entered"));
 	/*	if (r.getOutput().get("actions")=="DBinsert"){

@@ -67,7 +67,7 @@ public class Talk extends HttpServlet {
 		System.out.println(" IsExist:--"+isExist);
 		String name = (String) r.getContext().get("name");
 		String email = (String) r.getContext().get("email");
-		Long phone =(Long) r.getContext().get("phone");
+		String phone =(String) r.getContext().get("phone");
 		String company =(String) r.getContext().get("company_name");
 		String companytype =(String) r.getContext().get("company_type");
 		String partnumber =(String) r.getContext().get("part_number");

@@ -125,12 +125,12 @@ public class Talk extends HttpServlet {
 				+ "(?,?,?,?,?,?,?,?,?)";
 				PreparedStatement preparedStatement = conn.prepareStatement(insertTableSQL);
 				preparedStatement.setString(1, company);
-				preparedStatement.setString(2, company);
+				preparedStatement.setString(2, email);
 				preparedStatement.setString(3, name);
 				preparedStatement.setString(4, phone);
 				preparedStatement.setString(5, companytype);
 				preparedStatement.setString(6, partnumber);
-				preparedStatement.setString(7, qty);
+				preparedStatement.setDouble(7, qty);
 				preparedStatement.setString(8, timeframe);
 				preparedStatement.setString(9, "Comments");
 

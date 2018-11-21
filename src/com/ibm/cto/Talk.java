@@ -19,6 +19,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.*;
 
 
 
@@ -45,9 +46,9 @@ public class Talk extends HttpServlet {
 		String contextString = request.getParameter("context");
 		JSONObject contextObject = new JSONObject();
 
-// code changes		
-  Connection conn = null;
-  Statement stmt = null;
+/* code changes		
+        Connection conn = null;
+        Statement stmt = null; */
 
 		if(contextString != null) {
 			contextObject = JSONObject.parseObject(contextString);
@@ -100,7 +101,7 @@ public class Talk extends HttpServlet {
 		// jdbc code changes begin
 		
 		 Connection conn = null;
-  Statement stmt = null;
+         Statement stmt = null;
 
         try {
  

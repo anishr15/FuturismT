@@ -108,7 +108,7 @@ public class Talk extends HttpServlet {
             String dbURL = "jdbc:sqlserver://169.62.148.19:1433;databaseName=ASAPChatBot_Staging;integratedSecurity=true"; //"jdbc:sqlserver://169.62.148.19\\ASAPChatBot_Staging";
             String user = "ChatBot";
             String pass = "$C#a!B0t1";
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn = DriverManager.getConnection(dbURL, user, pass);
             if (conn != null) {
 				// stmt = conn.createStatement();
